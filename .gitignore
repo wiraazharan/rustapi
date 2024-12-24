@@ -1,0 +1,60 @@
+# Compiled output
+/target/
+**/*.rs.bk
+
+# Build scripts and temporary build directories
+/build/
+**/debug/
+**/release/
+
+# Logs and runtime files
+*.log
+/logs/
+/var/log/rust/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE and Editor settings
+/.idea/
+/.vscode/
+/*.swp
+/.editorconfig
+
+# Binaries
+*.out
+*.rlib
+*.rmeta
+
+# Dependency files
+Cargo.lock
+.cargo/
+**/deps/*
+
+# Environment and Config files
+.env
+.env.*
+*.local
+
+# Temporary files
+*.tmp
+*.bak
+*.old
+*.pid
+*.seed
+
+# Coverage files
+/coverage/
+*.profdata
+*.profraw
+
+# Generated docs
+/doc/
+
+# Rust specific
+/target/debug/
+/target/release/
+
+# For testing purposes
+/tests/outputs/*
