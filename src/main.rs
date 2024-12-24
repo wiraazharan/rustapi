@@ -2,10 +2,13 @@ use actix_web::{web, App, HttpServer};
 use dotenvy::dotenv;
 use std::env;
 
+// Import modules
 mod config;
 mod controllers;
 mod middleware;
-mod routes; // Add this for database configuration
+mod routes; // Route configurations
+mod models;
+mod utils; // Add this for response utilities
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -27,6 +30,7 @@ async fn main() -> std::io::Result<()> {
             .wrap(middleware::token_extractor::TokenExtractor) // Add request middleware
             .wrap(middleware::response_processor::ResponseProcessor) // Add response middleware
             .configure(routes::testendpoints::configure_routes) // Configure routes
+            .configure(routes::invoice::configure_routes) // Configure routes
     })
     .bind(format!("127.0.0.1:{}", port))?
     .run()
